@@ -1,0 +1,31 @@
+intents:
+- forgot_password
+
+
+actions:
+- utter_password
+- utter_gratuity
+
+
+
+templates:
+  utter_password:
+  - text: >
+            "Olá,
+            Para recuperar ou trocar sua senha, realize o seguinte procedimento:
+            1.      Entre na plataforma da Escola Virtual De Governo
+            2.      Coloque seu e-mail na tela de Login e clique em verificar. Utilize o e-mail do qual você deseja recuperar a senha;
+            3.      Clique no link esqueceu a senha;
+            4.      Informe seu e-mail e confirme;
+            5.      O Sistema enviará um link para o seu e-mail para que você possa recuperar a senha;
+            6.      Informe a nova senha e pronto."
+
+  utter_gratuity:
+  - text: >
+            "Olá,
+            Todos os cursos da Escola Virtual De Governo são gratuitos e a Distância.
+            Os cursos podem ser realizados por qualquer pessoa, seja ela servidor público ou não, e não possuem limites de vagas.
+            Os cursos estarão disponíveis de forma permanente e aberta, sem limite de vagas. Os usuários poderão se inscrever a qualquer momento e iniciar o curso imediatamente."
+
+
+
