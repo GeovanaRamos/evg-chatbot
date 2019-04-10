@@ -1,18 +1,26 @@
 intents:
 - forgot_password
+- gratuity
+- what_is
+- course_enrol
 
 
 actions:
+- utter_fallback
 - utter_password
 - utter_gratuity
+- utter_what_is
+- utter_course_enrol
 
 
 
 templates:
+  utter_fallback:
+  - text: "Desculpe, não entendi."
+
   utter_password:
   - text: >
-            "Olá,
-            Para recuperar ou trocar sua senha, realize o seguinte procedimento:
+            "Para recuperar ou trocar sua senha, realize o seguinte procedimento:
             1.      Entre na plataforma da Escola Virtual De Governo
             2.      Coloque seu e-mail na tela de Login e clique em verificar. Utilize o e-mail do qual você deseja recuperar a senha;
             3.      Clique no link esqueceu a senha;
@@ -22,10 +30,26 @@ templates:
 
   utter_gratuity:
   - text: >
-            "Olá,
-            Todos os cursos da Escola Virtual De Governo são gratuitos e a Distância.
-            Os cursos podem ser realizados por qualquer pessoa, seja ela servidor público ou não, e não possuem limites de vagas.
-            Os cursos estarão disponíveis de forma permanente e aberta, sem limite de vagas. Os usuários poderão se inscrever a qualquer momento e iniciar o curso imediatamente."
+            "Todos os cursos da Escola Virtual De Governo são gratuitos e a Distância.
+            Os cursos podem ser realizados por qualquer pessoa, seja ela servidor público ou 
+            não, e não possuem limites de vagas.
+            Os cursos estarão disponíveis de forma permanente e aberta, sem limite de vagas. 
+            Os usuários poderão se inscrever a qualquer momento e iniciar o curso imediatamente."
 
-
+  utter_what_is:
+  - text: >
+            "Para o servidor ou cidadão que busca capacitação no serviço público, o Portal 
+            oferecerá um catálogo de cursos unificado das principais escolas de governo e 
+            centros de capacitação da Administração Pública. Além disso, o servidor ou cidadão 
+            terá acesso a um cadastro e Login únicos para a realização de suas capacitações,
+            bem como um histórico escolar unificado."
+  
+  utter_course_enrol:
+  - text: >
+            "Para realizar sua inscrição em algum curso da Escola Virtual De Governo, siga as instruções:
+            1.           Acesse http://Escola Virtual de Governo.gov.br;
+            2.           Realize a busca no curso desejado no nosso catálogo de cursos;
+            3.           Clique em Inscreva-se;
+            4.           Digite seu e-mail ou CPF;
+            5.           Prossiga com a inscrição."
 

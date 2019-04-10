@@ -17,3 +17,17 @@
 - Preciso pagar pelos cursos
 - Os cursos são pagos
 
+## intent: what_is
+- O que é escola virtual de governo
+- O que é a escola virtual
+- Explique escola virtual
+- O que faz escola virtual de governo
+- O que faz a escola virtual
+
+## intent: course_enrol
+- Como se inscrever no curso
+- Como se cadastrar no curso
+- Inscrever no curso
+- Cadastrar no curso
+- Participar de um curso
+- Entrar em um curso
