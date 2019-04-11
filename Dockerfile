@@ -33,9 +33,10 @@ RUN pip install rasa_core==0.11.3
 
 RUN pip install sklearn_crfsuite
 RUN python -m spacy download pt
+RUN make train-nlu; make train-core;
 
 VOLUME ["/app/data"]
 
 EXPOSE 5005 5006
 
-CMD make train-nlu; make train-core; make action-server;
+CMD make action-server;
