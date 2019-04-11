@@ -1,4 +1,6 @@
 intents:
+- confirm
+- nope
 - forgot_password
 - gratuity
 - what_is
@@ -20,6 +22,8 @@ intents:
 actions:
 - utter_fallback
 - utter_useful
+- utter_thanks
+- utter_ask_again
 - utter_password
 - utter_gratuity
 - utter_what_is
@@ -78,7 +82,7 @@ templates:
   utter_course_enrol:
   - text: >
             "Para realizar sua inscrição em algum curso da Escola Virtual De Governo, siga as instruções:
-            1.           Acesse http://Escola Virtual de Governo.gov.br;
+            1.           Acesse Escola Virtual de Governo gov br;
             2.           Realize a busca no curso desejado no nosso catálogo de cursos;
             3.           Clique em Inscreva-se;
             4.           Digite seu e-mail ou CPF;
@@ -93,20 +97,20 @@ templates:
 
   utter_course_catalog:
   - text: >
-            "Para acompanhar os cursos com inscrições abertas, acesse: https://Escola Virtual de 
+            "Para acompanhar os cursos com inscrições abertas, acesse: Escola Virtual de 
             Governo.gov.br/catalogo"
 
 
   utter_two_courses:
   - text: >
-            "Você pode se inscrever em quantos cursos quiser no mesmo período de tempo, desde que tenha disponibilidade para cursá-los.
- 
-"
+            "Você pode se inscrever em quantos cursos quiser no mesmo período de tempo, 
+            desde que tenha disponibilidade para cursá-los."
+            
   utter_cancel_enrol:
   - text: >
             "Realize o seguinte procedimento para trancar/cancelar a matrícula:
             1.          Acesse a plataforma com seu Login e senha;
-            2.          Acesse o menu Meus Curso -> Em andamento;
+            2.          Acesse o menu Meus Curso - Em andamento;
             3.          Encontre o curso que deseja cancelar e clique na imagem de engrenagem ao lado de ir para o curso.
             4.          Clique no botão Trancar Inscrição"
 

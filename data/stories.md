@@ -53,7 +53,7 @@
 
 ## story_missed_deadline
 * missed_deadline
-  - missed_deadline
+  - utter_missed_deadline
   - utter_useful
 
 ## story_update_profile
