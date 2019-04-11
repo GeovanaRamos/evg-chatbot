@@ -3,20 +3,51 @@ intents:
 - gratuity
 - what_is
 - course_enrol
+- follow_course
+- course_catalog
+- two_courses
+- cancel_enrol
+- course_content
+- forgot_login
+- missed_deadline
+- update_profile
+- course_workload
+- course_start
+- course_end
+- course_grade_pass
 
 
 actions:
 - utter_fallback
+- utter_useful
 - utter_password
 - utter_gratuity
 - utter_what_is
 - utter_course_enrol
+- utter_course_catalog
+- utter_two_courses
+- utter_cancel_enrol
+- utter_course_content
+- utter_forgot_login
+- utter_missed_deadline
+- utter_update_profile
+- utter_course_info
+- utter_course_grade_pass
 
 
 
 templates:
   utter_fallback:
   - text: "Desculpe, não entendi."
+
+  utter_useful:
+  - text: "Resolvi seu problema?"
+
+  utter_thanks:
+  - text: "Obrigado! Até mais!"
+
+  utter_ask_again:
+  - text: "Refaça sua pergunta."
 
   utter_password:
   - text: >
@@ -53,3 +84,77 @@ templates:
             4.           Digite seu e-mail ou CPF;
             5.           Prossiga com a inscrição."
 
+  utter_follow_course:
+  - text: >
+            "Para acompanhar seus cursos, basta acessar a sua conta no portal Escola Virtual De Governo e 
+            clicar no bloco MEUS CURSOS (situado no menu lateral esquerdo), em seguida, serão carregadas as 
+            informações dos cursos em andamento, finalizados e trancados.
+            Utilize preferencialmente o navegador Mozilla Firefox"
+
+  utter_course_catalog:
+  - text: >
+            "Para acompanhar os cursos com inscrições abertas, acesse: https://Escola Virtual de 
+            Governo.gov.br/catalogo"
+
+
+  utter_two_courses:
+  - text: >
+            "Você pode se inscrever em quantos cursos quiser no mesmo período de tempo, desde que tenha disponibilidade para cursá-los.
+ 
+"
+  utter_cancel_enrol:
+  - text: >
+            "Realize o seguinte procedimento para trancar/cancelar a matrícula:
+            1.          Acesse a plataforma com seu Login e senha;
+            2.          Acesse o menu Meus Curso -> Em andamento;
+            3.          Encontre o curso que deseja cancelar e clique na imagem de engrenagem ao lado de ir para o curso.
+            4.          Clique no botão Trancar Inscrição"
+
+  utter_course_content:
+  - text: >
+            "O Ambiente Virtual de Aprendizagem (AVA) é a sala de aula virtual, o local onde são disponibilizados 
+            conteúdos, atividades, mensagens, notas e certificado.Para acessar o ambiente virtual você precisa acessar 
+            primeiramente pela Plataforma da Secretaria Virtual e de lá, será redirecionado ao Ambiente Virtual de 
+            Aprendizagem na Plataforma MOOC. Para isso, siga o procedimento a seguir:
+            1.                    Acesse o Portal da Escola Virtual De Governo
+            2.                    Clique em “AMBIENTE VIRTUAL”, no menu lateral esquerdo, e você será redirecionado 
+            para o AVA.
+            3.                    Depois disso, clique no botão cursos e inicie seus estudos.
+            Utilize preferencialmente o navegador Mozilla Firefox"
+
+  utter_forgot_login:
+  - text: >
+            "Para alteração do seu e-mail, siga os passos abaixo:
+            1.      Entre na plataforma da Escola Virtual De Governo
+            2.      Na tela de Login, preencha o e-mail que deseja utilizar;
+            3.      O sistema enviará uma mensagem para esse e-mail com um link para complementação de seus dados;
+            4.      Preencha o formulário com as suas informações (O seu CPF que fará a vinculação com a conta antiga);
+            5.      Confirme as informações apresentadas no sistema;
+            6.      Pronto. Seu e-mail foi atualizado."
+
+  utter_missed_deadline:
+  - text: >
+            "As atividades avaliativas ficam disponíveis apenas durante o período de realização do curso.
+            Caso seu resultado não tenha sido proveitoso na realização deste curso, você pode fazer novamente
+             as avaliações e obter o certificado, realizando uma nova inscrição no primeiro dia do mês subsequente
+              da data de inscrição dele. Ex: se a inscrição no curso atual foi realizada em 06/08, você só 
+              poderá realizar uma nova inscrição em 01/09."
+
+  utter_update_profile:
+  - text: >
+            "Siga as instruções abaixo para atualizar suas informações:       
+            1.  acesse a plataforma Escola Virtual De Governo com seu Login e senha;
+            2.  no canto superior direito, acesse o ícone de usuário e o menu Meus Dados;
+            3.  corrija as informações que desejar e clique em salvar;
+            4.  pronto. Seus dados serão atualizados."
+
+  utter_course_info:
+  - text: >
+            "Siga as instruções para verificar as informações referentes à carga horária, à data de início/término 
+            e à nota mínima para aprovação do curso.
+            1.                  Realize seu Login no portal Escola Virtual De Governo;
+            2.                  Clique em Meus Cursos e Cursos em Andamento;
+            3.                  Selecione o curso desejado;
+            4.                  Clique em mais info;
+            5.                  Em seguida, serão carregadas as informações do curso."
+ 
