@@ -29,14 +29,15 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 ADD . .
 
-RUN pip install rasa_core==0.11.3
-
-RUN pip install sklearn_crfsuite
 RUN python -m spacy download pt
-RUN make train-nlu; make train-core;
+
+RUN make train-nlu
+RUN make train-core
 
 VOLUME ["/app/data"]
 
 EXPOSE 5005 5006
 
-CMD make action-server;
+CMD make deploy
+
+# CMD make action-server;
