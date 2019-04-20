@@ -1,11 +1,3 @@
-## story_yes
-* yes
- - utter_thanks
-
-## story_no
-* no
-  - utter_ask_again
-
 ## story_password 
 * forgot_password 
  - utter_password 

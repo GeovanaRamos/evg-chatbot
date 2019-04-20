@@ -1,6 +1,4 @@
 intents:
-- confirm
-- nope
 - forgot_password
 - gratuity
 - what_is
