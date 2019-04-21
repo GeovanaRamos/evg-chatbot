@@ -1,4 +1,18 @@
+slots:
+  yes_or_no:
+    type: categorical
+    values:
+      - sim
+      - não
+      - nao
+
+
+
+entities:
+- yes_or_no
+
 intents:
+- is_satisfied
 - forgot_password
 - gratuity
 - what_is

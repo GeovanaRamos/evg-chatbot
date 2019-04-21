@@ -1,5 +1,20 @@
 <!--- Make sure to update this training data file with more training examples from https://forum.rasa.com/t/rasa-starter-pack/704 --> 
 
+## intent:is_satisfied
+- [sim](yes_or_no) 
+- [nao](yes_or_no)
+- [sim](yes_or_no) resolveu 
+- [nao](yes_or_no) resolveu
+- [sim](yes_or_no) obrigado
+
+## synonym:sim
+- Sim
+- ss
+
+## synonym:nao
+- Não
+- não
+
 ## intent:forgot_password 
 - Recuperar senha de acesso
 - Esqueci minha senha

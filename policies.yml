@@ -1,13 +1,16 @@
 policies:
   - name: KerasPolicy
     epochs: 100
-    max_history: 5
+    batch_size: 50
+    max_history: 2
+    featurizer:
+      - name: FullDialogueTrackerFeaturizer
+        state_featurizer:
+        - name: LabelTokenizerSingleStateFeaturizer
   - name: FallbackPolicy
-    # min confidence needed to accept an NLU prediction
     nlu_threshold: 0.3
-    # min confidence needed to accept an action prediction from Rasa Core
     core_threshold: 0.3
     fallback_action_name: 'utter_fallback'
   - name: MemoizationPolicy
-    max_history: 5
+    max_history: 2
   - name: FormPolicy
