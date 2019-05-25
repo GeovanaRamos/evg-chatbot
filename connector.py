@@ -2,6 +2,7 @@ import logging
 from typing import Text
 import requests
 import json
+import os
 
 from flask import Blueprint, request, jsonify, make_response
 
@@ -41,16 +42,9 @@ class RocketChatInput(InputChannel):
         self.socket_url = server_url.replace(
             "http://", '').replace("https://", '')
 
-        logger.info("[+] Connecting to Rocketchat socket...")
-        self.driver = Driver(self.socket_url, ssl=False)
-        self.driver.connect()
+        self.use_ssl = "https://" in server_url
 
-        logger.info("[+] Logging in to Rocketchat...")
-        self.driver.login(user, password)
-
-        logger.info("[+] Subscribing to messages...")
-        self.driver.subscribe_to_messages()
-        self.driver.add_prefix_handler('', self.send_from_data)
+        self.connected = False
 
         self.output_channel = RocketChatBot(
             self.user,
@@ -59,6 +53,21 @@ class RocketChatInput(InputChannel):
         )
 
         self.config = Config()
+
+    def connect(self):
+
+        logger.info("[+] Connecting to Rocketchat socket...")
+        self.driver = Driver(self.socket_url, ssl=self.use_ssl, debug=os.getenv('DEBUG', False))
+        self.driver.connect()
+
+        logger.info("[+] Logging in to Rocketchat...")
+        self.driver.login(self.user, self.password)
+
+        logger.info("[+] Subscribing to messages...")
+        self.driver.subscribe_to_messages()
+        self.driver.add_prefix_handler('', self.send_from_data)
+
+        self.connected = True
 
     def send_from_data(self, driver, data):
 
@@ -122,6 +131,9 @@ class RocketChatInput(InputChannel):
         @rocketchat_webhook.route("/", methods=['GET'])
         def health():
             return jsonify({"status": "ok"})
+
+        if self.connected is False:
+            self.connect()
 
         return rocketchat_webhook
 

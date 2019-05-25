@@ -13,12 +13,14 @@ configure_colored_logging(loglevel='DEBUG')
 
 def run(core_dir, nlu_dir):
     configs = {
-        'user': os.getenv('ROCKETCHAT_USER', 'bot'),
-        'password': os.getenv('ROCKETCHAT_PASSWORD', 'bot'),
-        'server_url': os.getenv('ROCKETCHAT_URL', 'http://localhost:3000'),
+        'user': os.getenv('ROCKETCHAT_USER', 'rasa'),
+        'password': os.getenv('ROCKETCHAT_PASSWORD', 'rasa'),
+        'server_url': os.getenv('ROCKETCHAT_URL', 'https://www.evg-rocket.tk'),
     }
 
     port = int(os.getenv('PORT', 5005))
+
+    print("Starting on port {} with configs: {}".format(port, configs))
 
     input_channel = RocketChatInput(
         user=configs['user'],
